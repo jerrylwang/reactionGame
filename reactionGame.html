@@ -10,12 +10,23 @@
 	
 
 	<style type="text/css">
+
+	body{
+		font-family: Verdana, Arial, sans-serif;
+
+	}
+
 	#box{
 		width: 200px;
 		height: 200px;
 		background-color: red;
 		display: none;
+		position: relative;
 
+	}
+
+	.yourTime{
+		font-weight: bold;
 	}
 
 	</style>
@@ -25,9 +36,10 @@
 
 
 <body>
+	<h1>Let's test your reactions!</h1>
 
-
-	<p>Your time : <span id = "time"></span></p>
+	<p>Click on the boxes and circles as quickly as you can!</p>
+	<p class="yourTime">Your time : <span id = "time">0</span>s</p>
 
 	<div id="box"></div>
 
@@ -39,13 +51,13 @@
 	var reactionTime;
 
 	function getRandomColor() {
-    var letters = '0123456789ABCDEF'.split('');
-    var color = '#';
-    for (var i = 0; i < 6; i++ ) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
+		var letters = '0123456789ABCDEF'.split('');
+		var color = '#';
+		for (var i = 0; i < 6; i++ ) {
+			color += letters[Math.floor(Math.random() * 16)];
+		}
+		return color;
+	}
 
 	
 
@@ -53,9 +65,28 @@
 
 		var time = Math.random();
 		time= time*3000;
-	
+
 
 		setTimeout(function(){
+
+			if(Math.random()>0.5){
+
+				document.getElementById("box").style.borderRadius="100px";
+			}else{
+				document.getElementById("box").style.borderRadius="0px";
+			}
+
+
+			var top=Math.random();
+			top=top*300;
+
+			var left=Math.random();
+			left=left*500;
+
+
+			document.getElementById("box").style.top=top+"px";
+			document.getElementById("box").style.left=left+"px";
+
 			document.getElementById("box").style.backgroundColor=getRandomColor();
 
 			document.getElementById("box").style.display="block";
