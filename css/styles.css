@@ -1,0 +1,17 @@
+body{
+		font-family: Verdana, Arial, sans-serif;
+
+	}
+
+	#box{
+		width: 200px;
+		height: 200px;
+		background-color: red;
+		display: none;
+		position: relative;
+
+	}
+
+	.yourTime{
+		font-weight: bold;
+	}
